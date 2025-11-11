@@ -26,9 +26,6 @@ jobs:
       - name: Set up Python 3.11
         run: uv python install 3.11
 
-      - name: Install nbdime
-        run: uv pip install --system nbdime
-
       - name: Get changed notebooks
         id: changed-notebooks
         run: |
@@ -77,7 +74,7 @@ jobs:
             echo '```diff' >> diff_comment.md
 
             # Generate diff (suppress errors if file doesn't exist in base)
-            uv run nbdiff --no-color $BASE_SHA $HEAD_SHA "$notebook" 2>/dev/null >> diff_comment.md || echo "New file" >> diff_comment.md
+            uvx --from nbdime nbdiff --no-color $BASE_SHA $HEAD_SHA "$notebook" 2>/dev/null >> diff_comment.md || echo "New file" >> diff_comment.md
 
             echo '```' >> diff_comment.md
             echo "" >> diff_comment.md
