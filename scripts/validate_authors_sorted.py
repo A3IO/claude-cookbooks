@@ -35,9 +35,12 @@ def is_sorted(data: dict) -> bool:
     return keys == sorted(keys, key=str.lower)
 
 
-def sort_authors(data: dict):
-    """Sort and write authors.yaml."""
+def sort_authors(data: dict, check_only: bool = False) -> bool:
+    """Sort and write authors.yaml. Returns True if file was/would be changed."""
     sorted_data = dict(sorted(data.items(), key=lambda x: x[0].lower()))
+
+    if check_only:
+        return list(data.keys()) != list(sorted_data.keys())
 
     with open(AUTHORS_FILE, "w", encoding="utf-8") as f:
         f.write(HEADER)
@@ -46,7 +49,7 @@ def sort_authors(data: dict):
             for key, value in details.items():
                 f.write(f"  {key}: {value}\n")
 
-    print("authors.yaml sorted successfully")
+    return True
 
 
 def show_diff(keys: list, sorted_keys: list):
@@ -79,13 +82,19 @@ def main():
         print("authors.yaml is empty")
         sys.exit(0)
 
+    already_sorted = is_sorted(data)
+
     if args.fix:
-        sort_authors(data)
+        if already_sorted:
+            print("1 file left unchanged")
+        else:
+            sort_authors(data)
+            print("1 file reformatted")
         sys.exit(0)
 
     # Validation mode
-    if is_sorted(data):
-        print("authors.yaml is sorted correctly")
+    if already_sorted:
+        print("1 file left unchanged")
         sys.exit(0)
 
     keys = list(data.keys())

@@ -36,6 +36,7 @@ fix:
 	@echo "Auto-fixing issues with ruff..."
 	uv run ruff check --fix .
 	uv run ruff format .
+	uv run python scripts/validate_authors_sorted.py --fix
 
 # Run tests
 test:
