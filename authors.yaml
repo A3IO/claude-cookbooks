@@ -3,10 +3,6 @@
 # This file maps author GitHub usernames (used in registry.yaml) to their full details
 # for display on the website.
 
-Anthropic:
-  name: Anthropic
-  website: https://www.anthropic.com
-  avatar: https://github.com/anthropics.png
 Adriaan-ANT:
   name: Adriaan Engelbrecht
   avatar: https://avatars.githubusercontent.com/u/222316629?v=4
@@ -14,10 +10,10 @@ alexalbertt:
   name: Alex Albert
   website: https://github.com/alexalbertt
   avatar: https://avatars.githubusercontent.com/u/34638987?v=4
-zealoushacker:
-  name: Alex Notov
-  website: https://github.com/zealoushacker
-  avatar: https://avatars.githubusercontent.com/u/346275?v=4
+Anthropic:
+  name: Anthropic
+  website: https://www.anthropic.com
+  avatar: https://github.com/anthropics.png
 Briiick:
   name: Alexander Bricken
   website: https://bricken.co
@@ -56,15 +52,19 @@ PedramNavid:
   name: Pedram Navid
   website: http://x.com/pdrmnvd
   avatar: https://avatars.githubusercontent.com/u/1045990
-rgb-prithvi:
-  name: Prithvi Rajasekaran
-  website: https://x.com/rgb_prithvi
-  avatar: https://avatars.githubusercontent.com/u/64937816
 ravi03071991:
   name: Ravi Theja
   website: https://sites.google.com/view/ravi-theja
   avatar: https://avatars.githubusercontent.com/u/12198101?v=4
+rgb-prithvi:
+  name: Prithvi Rajasekaran
+  website: https://x.com/rgb_prithvi
+  avatar: https://avatars.githubusercontent.com/u/64937816
 RichmondAlake:
   name: Richmond Alake
   website: https://github.com/RichmondAlake
   avatar: https://github.com/RichmondAlake.png
+zealoushacker:
+  name: Alex Notov
+  website: https://github.com/zealoushacker
+  avatar: https://avatars.githubusercontent.com/u/346275?v=4
